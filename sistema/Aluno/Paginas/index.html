@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DesInstituto - Painel</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="conteiner">    
+
+        <aside class="menu-lateral">
+            <div class="logo">
+                <h1><i class="fas fa-graduation-cap"></i> DesInstituto</h1>
+                <p>Inferior de Deseducação</p>
+            </div>
+            
+            <nav class="navegacao">
+                <ul>
+                    <li class="ativo"><a href="index.html"><i class="fas fa-home"></i> Painel</a></li>
+                    <li><a href="horarios.html"><i class="fas fa-clock"></i> Horários</a></li>
+                    <li><a href="notas.html"><i class="fas fa-star"></i> Notas</a></li>
+                    <li><a href="turma.html"><i class="fas fa-users"></i> Turma</a></li>
+                    <li><a href="avisos.html"><i class="fas fa-bullhorn"></i> Avisos</a></li>
+                </ul>
+            </nav>
+            
+            <div class="info-usuario">
+                <div class="avatar">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+                <div class="detalhes-usuario">
+                    <h3>Odla Trealyum</h3>
+                    <p>Aluno - INF31</p>
+                </div>
+            </div>
+        </aside>
+
+
+        <main class="conteudo-principal">
+            
+            <header class="cabecalho">
+                <div class="titulo-cabecalho">
+                    <h2>Painel do Aluno</h2>
+                    <p>Boa Noite, (Aluno)!</p>
+                </div>
+                <div class="acoes-cabecalho">
+                    <div class="notificacao">
+                        <i class="fas fa-bell"></i>
+                        <span class="contador">3</span>
+                    </div>
+                    <div class="data-atual">
+                        <i class="far fa-calendar"></i>
+                        <span id="data-hoje"></span>
+                    </div>
+                </div>
+            </header>
+
+            <section class="cards-principais">
+                <div class="cartao cartao-estatistica">
+                    <div class="icone-cartao azul">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="conteudo-cartao">
+                        <h3>CR Geral</h3>
+                        <p class="valor-estatistica">8.2</p>
+                        <p class="mudanca-estatistica"><i class="fas fa-arrow-up"></i> +0.3 desde último semestre</p>
+                    </div>
+                </div>
+
+                <div class="cartao cartao-estatistica">
+                    <div class="icone-cartao verde">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="conteudo-cartao">
+                        <h3>Curso</h3>
+                        <p class="valor-estatistica texto-curso">Informática</p>
+                        <p class="info-estatistica">Técnico Integrado</p>
+                    </div>
+                </div>
+
+                <div class="cartao cartao-estatistica">
+                    <div class="icone-cartao laranja">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <div class="conteudo-cartao">
+                        <h3>Frequência Total</h3>
+                        <p class="valor-estatistica">94.2%</p>
+                        <p class="mudanca-estatistica"><i class="fas fa-check-circle"></i> Presença regular</p>
+                    </div>
+                </div>
+
+                <div class="cartao cartao-estatistica">
+                    <div class="icone-cartao roxo">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="conteudo-cartao">
+                        <h3>Turma</h3>
+                        <p class="valor-estatistica">INF31</p>
+                        <p class="info-estatistica">3º Ano - Manhã</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="secao-cr-anos">
+                <div class="titulo-secao">
+                    <h3><i class="fas fa-chart-line"></i> CR por Ano</h3>
+                </div>
+                <div class="cards-cr-anos">
+                    <div class="cartao cartao-cr">
+                        <div class="cabecalho-cr">
+                            <div class="icone-cr">
+                                <span class="numero-icone">1</span>
+                            </div>
+                            <div class="titulo-cr">
+                                <h4>1º Ano</h4>
+                                <p>2022</p>
+                            </div>
+                        </div>
+                        <div class="valor-cr">
+                            <span class="numero-cr">7.5</span>
+                            <span class="status-cr baixo">
+                                <i class="fas fa-arrow-down"></i> 0.7 abaixo
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="cartao cartao-cr">
+                        <div class="cabecalho-cr">
+                            <div class="icone-cr">
+                                <span class="numero-icone">2</span>
+                            </div>
+                            <div class="titulo-cr">
+                                <h4>2º Ano</h4>
+                                <p>2023</p>
+                            </div>
+                        </div>
+                        <div class="valor-cr">
+                            <span class="numero-cr">8.2</span>
+                            <span class="status-cr igual">
+                                <i class="fas fa-equals"></i> média atual
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="cartao cartao-cr">
+                        <div class="cabecalho-cr">
+                            <div class="icone-cr">
+                                <span class="numero-icone">3</span>
+                            </div>
+                            <div class="titulo-cr">
+                                <h4>3º Ano</h4>
+                                <p>2024</p>
+                            </div>
+                        </div>
+                        <div class="valor-cr">
+                            <span class="numero-cr">8.8</span>
+                            <span class="status-cr alto">
+                                <i class="fas fa-arrow-up"></i> 0.6 acima
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="secao-proximas-avaliacoes">
+                <div class="titulo-secao">
+                    <h3><i class="fas fa-calendar-alt"></i> Próximas Avaliações</h3>
+                </div>
+                <div class="cartao cartao-proximas">
+                    <div class="lista-proximas">
+                        <div class="item-proximo">
+                            <div class="data-proximo">
+                                <span class="dia">15</span>
+                                <span class="mes">MAR</span>
+                            </div>
+                            <div class="detalhes-proximo">
+                                <h4>Prova de Matemática</h4>
+                                <p>Álgebra Linear - Sala 204</p>
+                            </div>
+                        </div>
+                        <div class="item-proximo">
+                            <div class="data-proximo">
+                                <span class="dia">18</span>
+                                <span class="mes">MAR</span>
+                            </div>
+                            <div class="detalhes-proximo">
+                                <h4>Trabalho de Programação</h4>
+                                <p>Entrega do projeto em Java</p>
+                            </div>
+                        </div>
+                        <div class="item-proximo">
+                            <div class="data-proximo">
+                                <span class="dia">22</span>
+                                <span class="mes">MAR</span>
+                            </div>
+                            <div class="detalhes-proximo">
+                                <h4>Seminário de História</h4>
+                                <p>Apresentação em grupo</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="rodape">
+                <p>DesInstituto Inferior de Deseducação &copy; 2024</p>
+                <p>Sistema Educacional - Painel Aluno</p>
+            </footer>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

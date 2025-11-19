@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DesInstituto - Notas</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="conteiner">
+        
+        <aside class="menu-lateral">
+            <div class="logo">
+                <h1><i class="fas fa-graduation-cap"></i> DesInstituto</h1>
+                <p>Inferior de Deseducação</p>
+            </div>
+            
+            <nav class="navegacao">
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Painel</a></li>
+                    <li><a href="horarios.html"><i class="fas fa-clock"></i> Horários</a></li>
+                    <li class="ativo"><a href="notas.html"><i class="fas fa-star"></i> Notas</a></li>
+                    <li><a href="turma.html"><i class="fas fa-users"></i> Turma</a></li>
+                    <li><a href="avisos.html"><i class="fas fa-bullhorn"></i> Avisos</a></li>
+                </ul>
+            </nav>
+            
+            <div class="info-usuario">
+                <div class="avatar">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+                <div class="detalhes-usuario">
+                    <h3>Odla Trealyum</h3>
+                    <p>Aluno - INF31</p>
+                </div>
+            </div>
+        </aside>
+
+        <main class="conteudo-principal">
+            
+            <header class="cabecalho">
+                <div class="titulo-cabecalho">
+                    <h2>Quadro de Notas</h2>
+                    <p>Boletim 2024 - Turma INF31</p>
+                </div>
+                <div class="acoes-cabecalho">
+                    <div class="filtros-notas">
+                        <div class="filtros-etapas">
+                            <button class="filtro-etapa ativo" data-etapa="todas">
+                                <i class="fas fa-layer-group"></i>
+                                Todas
+                            </button>
+                            <button class="filtro-etapa" data-etapa="1">
+                                <i class="fas fa-1"></i>
+                                1ª Etapa
+                            </button>
+                            <button class="filtro-etapa" data-etapa="2">
+                                <i class="fas fa-2"></i>
+                                2ª Etapa
+                            </button>
+                            <button class="filtro-etapa" data-etapa="3">
+                                <i class="fas fa-3"></i>
+                                3ª Etapa
+                            </button>
+                        </div>
+                        <div class="visualizacao-notas">
+                            <button class="botao-visualizacao ativo" data-visualizacao="resumida">
+                                <i class="fas fa-list"></i>
+                                Resumida
+                            </button>
+                            <button class="botao-visualizacao" data-visualizacao="completa">
+                                <i class="fas fa-table"></i>
+                                Completa
+                            </button>
+                        </div>
+                    </div>
+                    <div class="data-atual">
+                        <i class="far fa-calendar"></i>
+                        <span id="data-hoje"></span>
+                    </div>
+                </div>
+            </header>
+
+            <div class="cards-principais">
+                <div class="cartao cartao-estatistica">
+                    <div class="icone-cartao azul">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="conteudo-cartao">
+                        <h3>CR Geral</h3>
+                        <p class="valor-estatistica">8.2</p>
+                        <p class="mudanca-estatistica"><i class="fas fa-arrow-up"></i> +0.3 desde último período</p>
+                    </div>
+                </div>
+
+                <div class="cartao cartao-estatistica">
+                    <div class="icone-cartao verde">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="conteudo-cartao">
+                        <h3>Aprovado</h3>
+                        <p class="valor-estatistica">7/8</p>
+                        <p class="mudanca-estatistica">87.5% das matérias</p>
+                    </div>
+                </div>
+
+                <div class="cartao cartao-estatistica">
+                    <div class="icone-cartao laranja">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="conteudo-cartao">
+                        <h3>Maior Nota</h3>
+                        <p class="valor-estatistica">9.5</p>
+                        <p class="mudanca-estatistica">Programação Web</p>
+                    </div>
+                </div>
+
+                <div class="cartao cartao-estatistica">
+                    <div class="icone-cartao vermelho">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <div class="conteudo-cartao">
+                        <h3>Recuperação</h3>
+                        <p class="valor-estatistica">1</p>
+                        <p class="mudanca-estatistica">Matéria com baixa nota</p>
+                    </div>
+                </div>
+            </div>
+
+            <section class="secao-notas ativo" data-visualizacao="resumida">
+                <div class="cabecalho-secao">
+                    <h3><i class="fas fa-list-alt"></i> Notas por Matéria (Resumido)</h3>
+                    <span class="status-geral">Média para Aprovação: <strong>6.0</strong></span>
+                </div>
+                
+                <div class="cartao cartao-tabela">
+                    <div class="tabela-container">
+                        <table class="tabela-notas" id="tabela-resumida">
+                            <thead>
+                                <tr>
+                                    <th class="coluna-materia">Matéria</th>
+                                    <th class="coluna-professor">Professor</th>
+                                    
+                                    <th class="coluna-etapa etapa-1" colspan="4">
+                                        <div class="cabecalho-etapa">
+                                            <i class="fas fa-1"></i>
+                                            1ª Etapa
+                                        </div>
+                                    </th>
+                                    
+                                    <th class="coluna-etapa etapa-2" colspan="4">
+                                        <div class="cabecalho-etapa">
+                                            <i class="fas fa-2"></i>
+                                            2ª Etapa
+                                        </div>
+                                    </th>
+                                    
+                                    <th class="coluna-etapa etapa-3" colspan="4">
+                                        <div class="cabecalho-etapa">
+                                            <i class="fas fa-3"></i>
+                                            3ª Etapa
+                                        </div>
+                                    </th>
+                                    
+                                    <th class="coluna-status">Status Geral</th>
+                                </tr>
+                                <tr class="subcabecalho">
+                                    <th></th>
+                                    <th></th>
+                                    
+                                    <th class="subcoluna etapa-1">I1 (2)</th>
+                                    <th class="subcoluna etapa-1">I2 (2)</th>
+                                    <th class="subcoluna etapa-1">A1 (6)</th>
+                                    <th class="subcoluna etapa-1">Média</th>
+                                    
+                                    <th class="subcoluna etapa-2">I1 (2)</th>
+                                    <th class="subcoluna etapa-2">I2 (2)</th>
+                                    <th class="subcoluna etapa-2">A1 (6)</th>
+                                    <th class="subcoluna etapa-2">Média</th>
+                                    
+                                    <th class="subcoluna etapa-3">I1 (2)</th>
+                                    <th class="subcoluna etapa-3">I2 (2)</th>
+                                    <th class="subcoluna etapa-3">A1 (6)</th>
+                                    <th class="subcoluna etapa-3">Média</th>
+                                    
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="linha-materia" data-materia="programacao-web">
+                                    <td class="celula-materia">
+                                        <div class="icone-materia">
+                                            <i class="fas fa-laptop-code"></i>
+                                        </div>
+                                        <div class="info-materia">
+                                            <h4>Programação Web</h4>
+                                            <span class="codigo-materia">INF301</span>
+                                        </div>
+                                    </td>
+                                    <td class="celula-professor">Prof. Oliveira</td>
+                                    
+                                    <td class="celula-nota etapa-1 nota-alta" title="I1 - 1ª Etapa">2.0</td>
+                                    <td class="celula-nota etapa-1 nota-alta" title="I2 - 1ª Etapa">2.0</td>
+                                    <td class="celula-nota etapa-1 nota-alta" title="A1 - 1ª Etapa">5.5</td>
+                                    <td class="celula-media-etapa etapa-1 nota-alta">9.5</td>
+                                    
+                                    <td class="celula-nota etapa-2 nota-alta" title="I1 - 2ª Etapa">1.8</td>
+                                    <td class="celula-nota etapa-2 nota-alta" title="I2 - 2ª Etapa">2.0</td>
+                                    <td class="celula-nota etapa-2 nota-alta" title="A1 - 2ª Etapa">5.2</td>
+                                    <td class="celula-media-etapa etapa-2 nota-alta">9.0</td>
+                                    
+                                    <td class="celula-nota etapa-3 nota-alta" title="I1 - 3ª Etapa">1.5</td>
+                                    <td class="celula-nota etapa-3 nota-alta" title="I2 - 3ª Etapa">2.0</td>
+                                    <td class="celula-nota etapa-3 nota-alta" title="A1 - 3ª Etapa">5.0</td>
+                                    <td class="celula-media-etapa etapa-3 nota-alta">8.5</td>
+                                    
+                                    <td class="celula-status-geral">
+                                        <span class="status-aprovado">
+                                            <i class="fas fa-check-circle"></i>
+                                            Aprovado
+                                        </span>
+                                    </td>
+                                </tr>
+                                
+                                <tr class="linha-materia" data-materia="portugues">
+                                    <td class="celula-materia">
+                                        <div class="icone-materia">
+                                            <i class="fas fa-book"></i>
+                                        </div>
+                                        <div class="info-materia">
+                                            <h4>Português</h4>
+                                            <span class="codigo-materia">POR301</span>
+                                        </div>
+                                    </td>
+                                    <td class="celula-professor">Prof. Almeida</td>
+                                    
+                                    <td class="celula-nota etapa-1 nota-media" title="I1 - 1ª Etapa">1.5</td>
+                                    <td class="celula-nota etapa-1 nota-media" title="I2 - 1ª Etapa">1.5</td>
+                                    <td class="celula-nota etapa-1 nota-media" title="A1 - 1ª Etapa">3.0</td>
+                                    <td class="celula-media-etapa etapa-1 nota-media">6.0</td>
+                                    
+                                    <td class="celula-nota etapa-2 nota-baixa" title="I1 - 2ª Etapa">1.0</td>
+                                    <td class="celula-nota etapa-2 nota-media" title="I2 - 2ª Etapa">1.5</td>
+                                    <td class="celula-nota etapa-2 nota-baixa" title="A1 - 2ª Etapa">2.8</td>
+                                    <td class="celula-media-etapa etapa-2 nota-baixa">5.3</td>
+                                    
+                                    <td class="celula-nota etapa-3 nota-baixa" title="I1 - 3ª Etapa">0.5</td>
+                                    <td class="celula-nota etapa-3 nota-baixa" title="I2 - 3ª Etapa">1.0</td>
+                                    <td class="celula-nota etapa-3 nota-baixa" title="A1 - 3ª Etapa">2.0</td>
+                                    <td class="celula-media-etapa etapa-3 nota-baixa">3.5</td>
+                                    
+                                    <td class="celula-status-geral">
+                                        <span class="status-recuperacao">
+                                            <i class="fas fa-exclamation-triangle"></i>
+                                            Recuperação
+                                        </span>
+                                    </td>
+                                </tr>
+                                
+                                <tr class="linha-materia" data-materia="matematica">
+                                    <td class="celula-materia">
+                                        <div class="icone-materia">
+                                            <i class="fas fa-calculator"></i>
+                                        </div>
+                                        <div class="info-materia">
+                                            <h4>Matemática</h4>
+                                            <span class="codigo-materia">MAT301</span>
+                                        </div>
+                                    </td>
+                                    <td class="celula-professor">Prof. Silva</td>
+                                    
+                                    <td class="celula-nota etapa-1 nota-media" title="I1 - 1ª Etapa">1.0</td>
+                                    <td class="celula-nota etapa-1 nota-media" title="I2 - 1ª Etapa">1.5</td>
+                                    <td class="celula-nota etapa-1 nota-media" title="A1 - 1ª Etapa">3.5</td>
+                                    <td class="celula-media-etapa etapa-1 nota-media">6.0</td>
+                                    
+                                    <td class="celula-nota etapa-2 nota-media" title="I1 - 2ª Etapa">1.5</td>
+                                    <td class="celula-nota etapa-2 nota-media" title="I2 - 2ª Etapa">1.5</td>
+                                    <td class="celula-nota etapa-2 nota-media" title="A1 - 2ª Etapa">3.0</td>
+                                    <td class="celula-media-etapa etapa-2 nota-media">6.0</td>
+                                    
+                                    <td class="celula-nota etapa-3 nota-media" title="I1 - 3ª Etapa">1.3</td>
+                                    <td class="celula-nota etapa-3 nota-media" title="I2 - 3ª Etapa">1.5</td>
+                                    <td class="celula-nota etapa-3 nota-media" title="A1 - 3ª Etapa">3.2</td>
+                                    <td class="celula-media-etapa etapa-3 nota-media">6.0</td>
+                                    
+                                    <td class="celula-status-geral">
+                                        <span class="status-aprovado">
+                                            <i class="fas fa-check-circle"></i>
+                                            Aprovado
+                                        </span>
+                                    </td>
+                                </tr>
+                                
+                                <tr class="linha-materia" data-materia="ingles">
+                                    <td class="celula-materia">
+                                        <div class="icone-materia">
+                                            <i class="fas fa-language"></i>
+                                        </div>
+                                        <div class="info-materia">
+                                            <h4>Inglês</h4>
+                                            <span class="codigo-materia">ING301</span>
+                                        </div>
+                                    </td>
+                                    <td class="celula-professor">Prof. Santos</td>
+                                    
+                                    <td class="celula-nota etapa-1 nota-alta" title="I1 - 1ª Etapa">2.0</td>
+                                    <td class="celula-nota etapa-1 nota-alta" title="I2 - 1ª Etapa">2.0</td>
+                                    <td class="celula-nota etapa-1 nota-alta" title="A1 - 1ª Etapa">5.3</td>
+                                    <td class="celula-media-etapa etapa-1 nota-alta">9.3</td>
+                                    
+                                    <td class="celula-nota etapa-2 nota-alta" title="I1 - 2ª Etapa">1.8</td>
+                                    <td class="celula-nota etapa-2 nota-alta" title="I2 - 2ª Etapa">2.0</td>
+                                    <td class="celula-nota etapa-2 nota-alta" title="A1 - 2ª Etapa">5.0</td>
+                                    <td class="celula-media-etapa etapa-2 nota-alta">8.8</td>
+                                    
+                                    <td class="celula-nota etapa-3 nota-alta" title="I1 - 3ª Etapa">2.0</td>
+                                    <td class="celula-nota etapa-3 nota-alta" title="I2 - 3ª Etapa">2.0</td>
+                                    <td class="celula-nota etapa-3 nota-alta" title="A1 - 3ª Etapa">5.5</td>
+                                    <td class="celula-media-etapa etapa-3 nota-alta">9.5</td>
+                                    
+                                    <td class="celula-status-geral">
+                                        <span class="status-aprovado">
+                                            <i class="fas fa-check-circle"></i>
+                                            Aprovado
+                                        </span>
+                                    </td>
+                                </tr>
+                                
+                                <tr class="linha-materia" data-materia="banco-dados">
+                                    <td class="celula-materia">
+                                        <div class="icone-materia">
+                                            <i class="fas fa-database"></i>
+                                        </div>
+                                        <div class="info-materia">
+                                            <h4>Banco de Dados</h4>
+                                            <span class="codigo-materia">INF302</span>
+                                        </div>
+                                    </td>
+                                    <td class="celula-professor">Prof. Costa</td>
+                                    
+                                    <td class="celula-nota etapa-1 nota-alta" title="I1 - 1ª Etapa">2.0</td>
+                                    <td class="celula-nota etapa-1 nota-alta" title="I2 - 1ª Etapa">1.5</td>
+                                    <td class="celula-nota etapa-1 nota-alta" title="A1 - 1ª Etapa">5.0</td>
+                                    <td class="celula-media-etapa etapa-1 nota-alta">8.5</td>
+                                    
+                                    <td class="celula-nota etapa-2 nota-alta" title="I1 - 2ª Etapa">1.5</td>
+                                    <td class="celula-nota etapa-2 nota-alta" title="I2 - 2ª Etapa">2.0</td>
+                                    <td class="celula-nota etapa-2 nota-alta" title="A1 - 2ª Etapa">4.8</td>
+                                    <td class="celula-media-etapa etapa-2 nota-alta">8.3</td>
+                                    
+                                    <td class="celula-nota etapa-3 nota-alta" title="I1 - 3ª Etapa">1.8</td>
+                                    <td class="celula-nota etapa-3 nota-alta" title="I2 - 3ª Etapa">1.5</td>
+                                    <td class="celula-nota etapa-3 nota-alta" title="A1 - 3ª Etapa">5.2</td>
+                                    <td class="celula-media-etapa etapa-3 nota-alta">8.5</td>
+                                    
+                                    <td class="celula-status-geral">
+                                        <span class="status-aprovado">
+                                            <i class="fas fa-check-circle"></i>
+                                            Aprovado
+                                        </span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <section class="secao-notas" data-visualizacao="completa">
+                <div class="cabecalho-secao">
+                    <h3><i class="fas fa-chart-bar"></i> Detalhamento Completo por Matéria</h3>
+                    <span class="legenda-pesos">Notas: I1/I2 (Atividades - 2pts) + A1/A2/A3 (Provas - 6pts) = Total 10pts</span>
+                </div>
+                
+                <div class="cartao cartao-materia-detalhado" id="materia-portugues" data-materia="portugues">
+                    <div class="cabecalho-materia">
+                        <div class="info-materia-cabecalho">
+                            <div class="icone-materia-grande">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <div class="detalhes-materia-cabecalho">
+                                <h4>Português</h4>
+                                <p>Prof. Almeida • Código: POR301</p>
+                                <div class="status-materia-badge status-rec">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                    Em Recuperação
+                                </div>
+                            </div>
+                        </div>
+                        <div class="media-final-materia">
+                            <span class="rotulo-media">Média Geral</span>
+                            <span class="valor-media nota-baixa-bg">4.9</span>
+                        </div>
+                    </div>
+                    
+                    <div class="cartao-etapa-detalhada etapa-1">
+                        <div class="cabecalho-etapa-detalhada">
+                            <h5><i class="fas fa-1"></i> 1ª Etapa - Primeiro Bimestre</h5>
+                            <span class="media-etapa nota-media-bg">6.0</span>
+                        </div>
+                        <div class="tabela-detalhes-container">
+                            <table class="tabela-detalhes-notas">
+                                <thead>
+                                    <tr>
+                                        <th>Avaliação</th>
+                                        <th>Tipo</th>
+                                        <th>Data</th>
+                                        <th>Nota (pts)</th>
+                                        <th>Máximo</th>
+                                        <th>Observação</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Atividade I1</td>
+                                        <td><span class="tipo-avaliacao atividade">Atividade</span></td>
+                                        <td>15/03</td>
+                                        <td class="nota-media">1.5</td>
+                                        <td>2.0</td>
+                                        <td>Análise Sintática</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Atividade I2</td>
+                                        <td><span class="tipo-avaliacao atividade">Atividade</span></td>
+                                        <td>22/03</td>
+                                        <td class="nota-media">1.5</td>
+                                        <td>2.0</td>
+                                        <td>Redação Dissertativa</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Prova A1</td>
+                                        <td><span class="tipo-avaliacao prova">Prova</span></td>
+                                        <td>05/04</td>
+                                        <td class="nota-media">3.0</td>
+                                        <td>6.0</td>
+                                        <td>Conteúdo: Literatura</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr class="total-linha">
+                                        <td colspan="3"><strong>Total 1ª Etapa</strong></td>
+                                        <td colspan="3" class="nota-media"><strong>6.0 / 10.0</strong></td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <div class="cartao-etapa-detalhada etapa-2">
+                        <div class="cabecalho-etapa-detalhada">
+                            <h5><i class="fas fa-2"></i> 2ª Etapa - Segundo Bimestre</h5>
+                            <span class="media-etapa nota-baixa-bg">5.3</span>
+                        </div>
+                        <div class="tabela-detalhes-container">
+                            <table class="tabela-detalhes-notas">
+                                <thead>
+                                    <tr>
+                                        <th>Avaliação</th>
+                                        <th>Tipo</th>
+                                        <th>Data</th>
+                                        <th>Nota (pts)</th>
+                                        <th>Máximo</th>
+                                        <th>Observação</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Atividade I1</td>
+                                        <td><span class="tipo-avaliacao atividade">Atividade</span></td>
+                                        <td>15/05</td>
+                                        <td class="nota-baixa">1.0</td>
+                                        <td>2.0</td>
+                                        <td>Gramática</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Atividade I2</td>
+                                        <td><span class="tipo-avaliacao atividade">Atividade</span></td>
+                                        <td>22/05</td>
+                                        <td class="nota-media">1.5</td>
+                                        <td>2.0</td>
+                                        <td>Interpretação de Texto</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Prova A1</td>
+                                        <td><span class="tipo-avaliacao prova">Prova</span></td>
+                                        <td>05/06</td>
+                                        <td class="nota-baixa">2.8</td>
+                                        <td>6.0</td>
+                                        <td>Conteúdo: Ortografia</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Recuperação A2</td>
+                                        <td><span class="tipo-avaliacao recuperacao">Recuperação</span></td>
+                                        <td>12/06</td>
+                                        <td class="nota-media">4.0</td>
+                                        <td>6.0</td>
+                                        <td>Seminário em Grupo</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr class="total-linha">
+                                        <td colspan="3"><strong>Total 2ª Etapa (I1 + I2 + A2)</strong></td>
+                                        <td colspan="3" class="nota-baixa"><strong>5.3 / 10.0</strong></td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <div class="cartao-etapa-detalhada etapa-3">
+                        <div class="cabecalho-etapa-detalhada">
+                            <h5><i class="fas fa-3"></i> 3ª Etapa - Terceiro Bimestre</h5>
+                            <span class="media-etapa nota-baixa-bg">3.5</span>
+                        </div>
+                        <div class="tabela-detalhes-container">
+                            <table class="tabela-detalhes-notas">
+                                <thead>
+                                    <tr>
+                                        <th>Avaliação</th>
+                                        <th>Tipo</th>
+                                        <th>Data</th>
+                                        <th>Nota (pts)</th>
+                                        <th>Máximo</th>
+                                        <th>Observação</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Atividade I1</td>
+                                        <td><span class="tipo-avaliacao atividade">Atividade</span></td>
+                                        <td>15/08</td>
+                                        <td class="nota-baixa">0.5</td>
+                                        <td>2.0</td>
+                                        <td>Gramática Avançada</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Atividade I2</td>
+                                        <td><span class="tipo-avaliacao atividade">Atividade</span></td>
+                                        <td>22/08</td>
+                                        <td class="nota-baixa">1.0</td>
+                                        <td>2.0</td>
+                                        <td>Produção Textual</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Prova A1</td>
+                                        <td><span class="tipo-avaliacao prova">Prova</span></td>
+                                        <td>05/09</td>
+                                        <td class="nota-baixa">2.0</td>
+                                        <td>6.0</td>
+                                        <td>Conteúdo: Literatura Moderna</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr class="total-linha">
+                                        <td colspan="3"><strong>Total 3ª Etapa (I1 + I2 + A1)</strong></td>
+                                        <td colspan="3" class="nota-baixa"><strong>3.5 / 10.0</strong></td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cartao cartao-materia-detalhado" id="materia-programacao-web" data-materia="programacao-web">
+                    <div class="cabecalho-materia">
+                        <div class="info-materia-cabecalho">
+                            <div class="icone-materia-grande">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <div class="detalhes-materia-cabecalho">
+                                <h4>Programação Web</h4>
+                                <p>Prof. Oliveira • Código: INF301</p>
+                                <div class="status-materia-badge status-aprovado">
+                                    <i class="fas fa-check-circle"></i>
+                                    Aprovado
+                                </div>
+                            </div>
+                        </div>
+                        <div class="media-final-materia">
+                            <span class="rotulo-media">Média Geral</span>
+                            <span class="valor-media nota-alta-bg">9.0</span>
+                        </div>
+                    </div>
+                    
+                    <div class="cartao-etapa-detalhada etapa-1">
+                        <div class="cabecalho-etapa-detalhada">
+                            <h5><i class="fas fa-1"></i> 1ª Etapa - Primeiro Bimestre</h5>
+                            <span class="media-etapa nota-alta-bg">9.5</span>
+                        </div>
+                        <div class="tabela-detalhes-container">
+                            <table class="tabela-detalhes-notas">
+                                <thead>
+                                    <tr>
+                                        <th>Avaliação</th>
+                                        <th>Tipo</th>
+                                        <th>Data</th>
+                                        <th>Nota (pts)</th>
+                                        <th>Máximo</th>
+                                        <th>Observação</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Atividade I1</td>
+                                        <td><span class="tipo-avaliacao atividade">Atividade</span></td>
+                                        <td>18/03</td>
+                                        <td class="nota-alta">2.0</td>
+                                        <td>2.0</td>
+                                        <td>HTML/CSS Básico</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Atividade I2</td>
+                                        <td><span class="tipo-avaliacao atividade">Atividade</span></td>
+                                        <td>25/03</td>
+                                        <td class="nota-alta">2.0</td>
+                                        <td>2.0</td>
+                                        <td>Site Responsivo</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Prova A1</td>
+                                        <td><span class="tipo-avaliacao prova">Prova</span></td>
+                                        <td>08/04</td>
+                                        <td class="nota-alta">5.5</td>
+                                        <td>6.0</td>
+                                        <td>JavaScript e DOM</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr class="total-linha">
+                                        <td colspan="3"><strong>Total 1ª Etapa</strong></td>
+                                        <td colspan="3" class="nota-alta"><strong>9.5 / 10.0</strong></td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <div class="cartao-etapa-detalhada etapa-2">
+                        <div class="cabecalho-etapa-detalhada">
+                            <h5><i class="fas fa-2"></i> 2ª Etapa - Segundo Bimestre</h5>
+                            <span class="media-etapa nota-alta-bg">9.0</span>
+                        </div>
+                        <div class="tabela-detalhes-container">
+                            <table class="tabela-detalhes-notas">
+                                <thead>
+                                    <tr>
+                                        <th>Avaliação</th>
+                                        <th>Tipo</th>
+                                        <th>Data</th>
+                                        <th>Nota (pts)</th>
+                                        <th>Máximo</th>
+                                        <th>Observação</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Atividade I1</td>
+                                        <td><span class="tipo-avaliacao atividade">Atividade</span></td>
+                                        <td>18/05</td>
+                                        <td class="nota-alta">1.8</td>
+                                        <td>2.0</td>
+                                        <td>JavaScript Avançado</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Atividade I2</td>
+                                        <td><span class="tipo-avaliacao atividade">Atividade</span></td>
+                                        <td>25/05</td>
+                                        <td class="nota-alta">2.0</td>
+                                        <td>2.0</td>
+                                        <td>API REST</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Prova A1</td>
+                                        <td><span class="tipo-avaliacao prova">Prova</span></td>
+                                        <td>08/06</td>
+                                        <td class="nota-alta">5.2</td>
+                                        <td>6.0</td>
+                                        <td>Node.js e Express</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr class="total-linha">
+                                        <td colspan="3"><strong>Total 2ª Etapa</strong></td>
+                                        <td colspan="3" class="nota-alta"><strong>9.0 / 10.0</strong></td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <div class="cartao-etapa-detalhada etapa-3">
+                        <div class="cabecalho-etapa-detalhada">
+                            <h5><i class="fas fa-3"></i> 3ª Etapa - Terceiro Bimestre</h5>
+                            <span class="media-etapa nota-alta-bg">8.5</span>
+                        </div>
+                        <div class="tabela-detalhes-container">
+                            <table class="tabela-detalhes-notas">
+                                <thead>
+                                    <tr>
+                                        <th>Avaliação</th>
+                                        <th>Tipo</th>
+                                        <th>Data</th>
+                                        <th>Nota (pts)</th>
+                                        <th>Máximo</th>
+                                        <th>Observação</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Atividade I1</td>
+                                        <td><span class="tipo-avaliacao atividade">Atividade</span></td>
+                                        <td>18/08</td>
+                                        <td class="nota-alta">1.5</td>
+                                        <td>2.0</td>
+                                        <td>React.js Básico</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Atividade I2</td>
+                                        <td><span class="tipo-avaliacao atividade">Atividade</span></td>
+                                        <td>25/08</td>
+                                        <td class="nota-alta">2.0</td>
+                                        <td>2.0</td>
+                                        <td>Componentes React</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Prova A1</td>
+                                        <td><span class="tipo-avaliacao prova">Prova</span></td>
+                                        <td>08/09</td>
+                                        <td class="nota-alta">5.0</td>
+                                        <td>6.0</td>
+                                        <td>Full Stack Development</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr class="total-linha">
+                                        <td colspan="3"><strong>Total 3ª Etapa</strong></td>
+                                        <td colspan="3" class="nota-alta"><strong>8.5 / 10.0</strong></td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="cartao cartao-legenda">
+                <div class="cabecalho-legenda">
+                    <h4><i class="fas fa-info-circle"></i> Legenda das Notas</h4>
+                </div>
+                <div class="conteudo-legenda">
+                    <div class="item-legenda-nota">
+                        <span class="cor-legenda-nota nota-alta-bg"></span>
+                        <span>Nota Alta (≥ 8.0)</span>
+                    </div>
+                    <div class="item-legenda-nota">
+                        <span class="cor-legenda-nota nota-media-bg"></span>
+                        <span>Nota Média (6.0 - 7.9)</span>
+                    </div>
+                    <div class="item-legenda-nota">
+                        <span class="cor-legenda-nota nota-baixa-bg"></span>
+                        <span>Nota Baixa (< 6.0)</span>
+                    </div>
+                    <div class="item-legenda-nota">
+                        <span class="cor-legenda-nota status-aprovado"></span>
+                        <span>Aprovado</span>
+                    </div>
+                    <div class="item-legenda-nota">
+                        <span class="cor-legenda-nota status-recuperacao"></span>
+                        <span>Recuperação</span>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="rodape">
+                <p>DesInstituto Inferior de Deseducação &copy; 2024</p>
+                <p>Sistema Educacional - Quadro de Notas</p>
+            </footer>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="notas.js"></script>
+</body>
+</html>

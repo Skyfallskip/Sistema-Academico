@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DesInstituto - Avisos</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="conteiner">
+        
+
+        <aside class="menu-lateral">
+            <div class="logo">
+                <h1><i class="fas fa-graduation-cap"></i> DesInstituto</h1>
+                <p>Inferior de Deseducação</p>
+            </div>
+            
+            <nav class="navegacao">
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Painel</a></li>
+                    <li><a href="horarios.html"><i class="fas fa-clock"></i> Horários</a></li>
+                    <li><a href="notas.html"><i class="fas fa-star"></i> Notas</a></li>
+                    <li><a href="turma.html"><i class="fas fa-users"></i> Turma</a></li>
+                    <li class="ativo"><a href="avisos.html"><i class="fas fa-bullhorn"></i> Avisos</a></li>
+                </ul>
+            </nav>
+            
+            <div class="info-usuario">
+                <div class="avatar">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+                <div class="detalhes-usuario">
+                    <h3>Odla Trealyum</h3>
+                    <p>Aluno - INF31</p>
+                </div>
+            </div>
+        </aside>
+        <main class="conteudo-principal">
+            
+            <header class="cabecalho">
+                <div class="titulo-cabecalho">
+                    <h2>Quadro de Avisos</h2>
+                    <p>Notificações importantes e comunicados</p>
+                </div>
+                <div class="acoes-cabecalho">
+                    <div class="filtros-avisos">
+                        <button class="filtro-aviso ativo" data-tipo="todos">
+                            <i class="fas fa-layer-group"></i>
+                            Todos
+                        </button>
+                        <button class="filtro-aviso" data-tipo="importante">
+                            <i class="fas fa-exclamation-circle"></i>
+                            Importantes
+                        </button>
+                        <button class="filtro-aviso" data-tipo="evento">
+                            <i class="fas fa-calendar-check"></i>
+                            Eventos
+                        </button>
+                        <button class="filtro-aviso" data-tipo="prazos">
+                            <i class="fas fa-clock"></i>
+                            Prazos
+                        </button>
+                    </div>
+                    <div class="data-atual">
+                        <i class="far fa-calendar"></i>
+                        <span id="data-hoje"></span>
+                    </div>
+                </div>
+            </header>
+
+            <div class="cards-principais">
+                <div class="cartao cartao-estatistica">
+                    <div class="icone-cartao azul">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <div class="conteudo-cartao">
+                        <h3>Total de Avisos</h3>
+                        <p class="valor-estatistica">12</p>
+                        <p class="mudanca-estatistica">este mês</p>
+                    </div>
+                </div>
+
+                <div class="cartao cartao-estatistica">
+                    <div class="icone-cartao vermelho">
+                        <i class="fas fa-exclamation-circle"></i>
+                    </div>
+                    <div class="conteudo-cartao">
+                        <h3>Avisos Importantes</h3>
+                        <p class="valor-estatistica">4</p>
+                        <p class="mudanca-estatistica"><i class="fas fa-arrow-up"></i> Atenção necessária</p>
+                    </div>
+                </div>
+
+                <div class="cartao cartao-estatistica">
+                    <div class="icone-cartao verde">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <div class="conteudo-cartao">
+                        <h3>Eventos Ativos</h3>
+                        <p class="valor-estatistica">5</p>
+                        <p class="mudanca-estatistica">este mês</p>
+                    </div>
+                </div>
+
+                <div class="cartao cartao-estatistica">
+                    <div class="icone-cartao laranja">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="conteudo-cartao">
+                        <h3>Prazos Próximos</h3>
+                        <p class="valor-estatistica">3</p>
+                        <p class="mudanca-estatistica"><i class="fas fa-exclamation-triangle"></i> Fique atento</p>
+                    </div>
+                </div>
+            </div>
+
+            <section class="secao-destaque">
+                <div class="cabecalho-secao">
+                    <h3><i class="fas fa-star"></i> Aviso em Destaque</h3>
+                    <span class="status-destaque"><i class="fas fa-fire"></i> Urgente</span>
+                </div>
+                
+                <div class="cartao cartao-destaque">
+                    <div class="cabecalho-destaque">
+                        <div class="badge-aviso badge-importante">
+                            <i class="fas fa-exclamation-circle"></i>
+                            Importante
+                        </div>
+                        <div class="data-destaque">
+                            <span class="dia-destaque">18</span>
+                            <span class="mes-destaque">MAR</span>
+                            <span class="ano-destaque">2024</span>
+                        </div>
+                    </div>
+                    
+                    <div class="conteudo-destaque">
+                        <h4><i class="fas fa-virus"></i> Suspensão de Aulas - Medidas Sanitárias</h4>
+                        <p class="descricao-destaque">
+                            Informamos que as aulas do dia 20/03 serão suspensas devido a medidas sanitárias preventivas na instituição. 
+                            Todas as atividades retornarão normalmente no dia 21/03. Mantenham-se atentos aos canais oficiais para 
+                            atualizações. Provas marcadas para esta data serão reagendadas.
+                        </p>
+                        
+                        <div class="detalhes-destaque">
+                            <div class="info-detalhe">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>Data: 20/03/2024</span>
+                            </div>
+                            <div class="info-detalhe">
+                                <i class="fas fa-user-tie"></i>
+                                <span>Emitido por: Coordenação Geral</span>
+                            </div>
+                            <div class="info-detalhe">
+                                <i class="fas fa-users"></i>
+                                <span>Público: Todos os alunos</span>
+                            </div>
+                        </div>
+                        
+                        <div class="acoes-destaque">
+                            <button class="botao-aviso botao-confirmar-leitura">
+                                <i class="fas fa-check-circle"></i>
+                                Marcar como lido
+                            </button>
+                            <button class="botao-aviso botao-compartilhar">
+                                <i class="fas fa-share-alt"></i>
+                                Compartilhar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="secao-lista-avisos">
+                <div class="cabecalho-secao">
+                    <h3><i class="fas fa-list-alt"></i> Todos os Avisos</h3>
+                    <span class="total-avisos">12 avisos encontrados</span>
+                </div>
+                
+                <div class="lista-avisos">
+                    <div class="cartao cartao-aviso" data-tipo="importante" data-lido="false">
+                        <div class="cabecalho-aviso">
+                            <div class="badge-aviso badge-importante">
+                                <i class="fas fa-exclamation-circle"></i>
+                                Importante
+                            </div>
+                            <div class="data-aviso">
+                                15/03/2024
+                            </div>
+                        </div>
+                        
+                        <div class="conteudo-aviso">
+                            <h4><i class="fas fa-chalkboard-teacher"></i> Mudança de Professor - Matemática</h4>
+                            <p class="descricao-aviso">
+                                O Prof. Silva não poderá ministrar aulas nesta semana. As aulas de Matemática serão ministradas 
+                                pelo Prof. Santos. O conteúdo programático permanece o mesmo.
+                            </p>
+                            
+                            <div class="detalhes-aviso">
+                                <div class="info-aviso">
+                                    <i class="fas fa-clock"></i>
+                                    <span>Válido até: 22/03/2024</span>
+                                </div>
+                                <div class="info-aviso">
+                                    <i class="fas fa-users"></i>
+                                    <span>Turmas: INF31, INF32</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="rodape-aviso">
+                            <div class="status-leitura">
+                                <i class="far fa-envelope"></i>
+                                <span>Não lido</span>
+                            </div>
+                            <button class="botao-leia-mais" data-aviso="1">
+                                Ler detalhes
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="cartao cartao-aviso" data-tipo="evento" data-lido="true">
+                        <div class="cabecalho-aviso">
+                            <div class="badge-aviso badge-evento">
+                                <i class="fas fa-calendar-check"></i>
+                                Evento
+                            </div>
+                            <div class="data-aviso">
+                                14/03/2024
+                            </div>
+                        </div>
+                        
+                        <div class="conteudo-aviso">
+                            <h4><i class="fas fa-laptop-code"></i> Workshop de Programação Web</h4>
+                            <p class="descricao-aviso">
+                                Participe do nosso workshop especial de React.js e Node.js. Haverá coffee break e certificado 
+                                de participação. Vagas limitadas!
+                            </p>
+                            
+                            <div class="detalhes-aviso">
+                                <div class="info-aviso">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <span>Data: 25/03/2024</span>
+                                </div>
+                                <div class="info-aviso">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Local: Auditório Principal</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="rodape-aviso">
+                            <div class="status-leitura lido">
+                                <i class="fas fa-envelope-open"></i>
+                                <span>Lido</span>
+                            </div>
+                            <button class="botao-leia-mais" data-aviso="2">
+                                Ler detalhes
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="cartao cartao-aviso" data-tipo="prazos" data-lido="false">
+                        <div class="cabecalho-aviso">
+                            <div class="badge-aviso badge-prazo">
+                                <i class="fas fa-clock"></i>
+                                Prazo
+                            </div>
+                            <div class="data-aviso">
+                                13/03/2024
+                            </div>
+                        </div>
+                        
+                        <div class="conteudo-aviso">
+                            <h4><i class="fas fa-book"></i> Entrega do Trabalho de Português</h4>
+                            <p class="descricao-aviso">
+                                Lembramos que o trabalho de análise literária deve ser entregue até o dia 22/03. 
+                                Atrasos serão penalizados com redução de 1 ponto por dia.
+                            </p>
+                            
+                            <div class="detalhes-aviso">
+                                <div class="info-aviso">
+                                    <i class="fas fa-calendar-times"></i>
+                                    <span>Prazo final: 22/03/2024</span>
+                                </div>
+                                <div class="info-aviso">
+                                    <i class="fas fa-user-tie"></i>
+                                    <span>Professor: Prof. Almeida</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="rodape-aviso">
+                            <div class="status-leitura">
+                                <i class="far fa-envelope"></i>
+                                <span>Não lido</span>
+                            </div>
+                            <button class="botao-leia-mais" data-aviso="3">
+                                Ler detalhes
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="cartao cartao-aviso" data-tipo="evento" data-lido="true">
+                        <div class="cabecalho-aviso">
+                            <div class="badge-aviso badge-evento">
+                                <i class="fas fa-calendar-check"></i>
+                                Evento
+                            </div>
+                            <div class="data-aviso">
+                                12/03/2024
+                            </div>
+                        </div>
+                        
+                        <div class="conteudo-aviso">
+                            <h4><i class="fas fa-graduation-cap"></i> Feira de Profissões 2024</h4>
+                            <p class="descricao-aviso">
+                                Participe da nossa Feira de Profissões com palestras, workshops e estandes de universidades. 
+                                Inscrições abertas até 20/03.
+                            </p>
+                            
+                            <div class="detalhes-aviso">
+                                <div class="info-aviso">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <span>Data: 28-29/03/2024</span>
+                                </div>
+                                <div class="info-aviso">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Local: Ginásio Esportivo</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="rodape-aviso">
+                            <div class="status-leitura lido">
+                                <i class="fas fa-envelope-open"></i>
+                                <span>Lido</span>
+                            </div>
+                            <button class="botao-leia-mais" data-aviso="4">
+                                Ler detalhes
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="cartao cartao-aviso" data-tipo="importante" data-lido="false">
+                        <div class="cabecalho-aviso">
+                            <div class="badge-aviso badge-importante">
+                                <i class="fas fa-exclamation-circle"></i>
+                                Importante
+                            </div>
+                            <div class="data-aviso">
+                                10/03/2024
+                            </div>
+                        </div>
+                        
+                        <div class="conteudo-aviso">
+                            <h4><i class="fas fa-tools"></i> Manutenção do Laboratório 3</h4>
+                            <p class="descricao-aviso">
+                                O Laboratório 3 estará em manutenção nos dias 18-19/03. As aulas de Programação Web serão 
+                                remanejadas para o Laboratório 2. Verifique o novo horário no sistema.
+                            </p>
+                            
+                            <div class="detalhes-aviso">
+                                <div class="info-aviso">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <span>Período: 18-19/03/2024</span>
+                                </div>
+                                <div class="info-aviso">
+                                    <i class="fas fa-door-closed"></i>
+                                    <span>Local alternativo: Lab. 2</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="rodape-aviso">
+                            <div class="status-leitura">
+                                <i class="far fa-envelope"></i>
+                                <span>Não lido</span>
+                            </div>
+                            <button class="botao-leia-mais" data-aviso="5">
+                                Ler detalhes
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="cartao cartao-aviso" data-tipo="prazos" data-lido="true">
+                        <div class="cabecalho-aviso">
+                            <div class="badge-aviso badge-prazo">
+                                <i class="fas fa-clock"></i>
+                                Prazo
+                            </div>
+                            <div class="data-aviso">
+                                08/03/2024
+                            </div>
+                        </div>
+                        
+                        <div class="conteudo-aviso">
+                            <h4><i class="fas fa-money-bill-wave"></i> Pagamento da Mensalidade</h4>
+                            <p class="descricao-aviso">
+                                Últimos dias para pagamento da mensalidade de março sem juros. Após o dia 15/03, será cobrada 
+                                multa de 2% ao mês.
+                            </p>
+                            
+                            <div class="detalhes-aviso">
+                                <div class="info-aviso">
+                                    <i class="fas fa-calendar-times"></i>
+                                    <span>Vencimento: 15/03/2024</span>
+                                </div>
+                                <div class="info-aviso">
+                                    <i class="fas fa-university"></i>
+                                    <span>Financeiro: Sala 101</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="rodape-aviso">
+                            <div class="status-leitura lido">
+                                <i class="fas fa-envelope-open"></i>
+                                <span>Lido</span>
+                            </div>
+                            <button class="botao-leia-mais" data-aviso="6">
+                                Ler detalhes
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="modal-overlay" id="modalAviso">
+                <div class="modal-detalhes modal-aviso">
+                    <div class="cabecalho-modal">
+                        <h3 class="titulo-modal" id="tituloModalAviso">Detalhes do Aviso</h3>
+                        <button class="botao-fechar-modal" id="fecharModalAviso">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div class="conteudo-modal" id="conteudoModalAviso">
+                    </div>
+                </div>
+            </div>
+
+            <div class="cartao cartao-legenda">
+                <div class="cabecalho-legenda">
+                    <h4><i class="fas fa-info-circle"></i> Legenda dos Avisos</h4>
+                </div>
+                <div class="conteudo-legenda">
+                    <div class="item-legenda-nota">
+                        <span class="cor-legenda-nota badge-importante"></span>
+                        <span>Aviso Importante</span>
+                    </div>
+                    <div class="item-legenda-nota">
+                        <span class="cor-legenda-nota badge-evento"></span>
+                        <span>Evento</span>
+                    </div>
+                    <div class="item-legenda-nota">
+                        <span class="cor-legenda-nota badge-prazo"></span>
+                        <span>Prazo</span>
+                    </div>
+                    <div class="item-legenda-nota">
+                        <span class="cor-legenda-nota status-lido"></span>
+                        <span>Lido</span>
+                    </div>
+                    <div class="item-legenda-nota">
+                        <span class="cor-legenda-nota status-nao-lido"></span>
+                        <span>Não lido</span>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="rodape">
+                <p>DesInstituto Inferior de Deseducação &copy; 2024</p>
+                <p>Sistema Educacional - Quadro de Avisos</p>
+            </footer>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="avisos.js"></script>
+</body>
+</html>

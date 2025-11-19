@@ -54,7 +54,12 @@ ROOT_URLCONF = "sistema.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [
+            BASE_DIR / "Paginas",
+            BASE_DIR / "sistema" / "Paginas",
+            BASE_DIR / 'Aluno' / 'Paginas',
+
+        ],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [

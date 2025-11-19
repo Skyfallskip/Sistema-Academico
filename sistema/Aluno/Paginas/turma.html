@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DesInstituto - Turma</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="conteiner">
+        
+        <aside class="menu-lateral">
+            <div class="logo">
+                <h1><i class="fas fa-graduation-cap"></i> DesInstituto</h1>
+                <p>Inferior de Deseducação</p>
+            </div>
+            
+            <nav class="navegacao">
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Painel</a></li>
+                    <li><a href="horarios.html"><i class="fas fa-clock"></i> Horários</a></li>
+                    <li><a href="notas.html"><i class="fas fa-star"></i> Notas</a></li>
+                    <li class="ativo"><a href="turma.html"><i class="fas fa-users"></i> Turma</a></li>
+                    <li><a href="avisos.html"><i class="fas fa-bullhorn"></i> Avisos</a></li>
+                </ul>
+            </nav>
+            
+            <div class="info-usuario">
+                <div class="avatar">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+                <div class="detalhes-usuario">
+                    <h3>Odla Trealyum</h3>
+                    <p>Aluno - INF31</p>
+                </div>
+            </div>
+        </aside>
+
+        <main class="conteudo-principal">
+            
+            <header class="cabecalho">
+                <div class="titulo-cabecalho">
+                    <h2>Informações da Turma</h2>
+                    <p>Turma INF31 - 3º Ano Técnico em Informática</p>
+                </div>
+                <div class="acoes-cabecalho">
+                    <div class="filtros-turma">
+                        <button class="filtro-turma ativo" data-grupo="todos">
+                            <i class="fas fa-users"></i>
+                            Todos
+                        </button>
+                        <button class="filtro-turma" data-grupo="g1">
+                            <i class="fas fa-user-friends"></i>
+                            Grupo 1
+                        </button>
+                        <button class="filtro-turma" data-grupo="g2">
+                            <i class="fas fa-user-friends"></i>
+                            Grupo 2
+                        </button>
+                    </div>
+                    <div class="data-atual">
+                        <i class="far fa-calendar"></i>
+                        <span id="data-hoje"></span>
+                    </div>
+                </div>
+            </header>
+
+            <div class="cards-principais">
+                <div class="cartao cartao-estatistica">
+                    <div class="icone-cartao azul">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="conteudo-cartao">
+                        <h3>Total de Alunos</h3>
+                        <p class="valor-estatistica">32</p>
+                        <p class="mudanca-estatistica">Turma completa</p>
+                    </div>
+                </div>
+
+                <div class="cartao cartao-estatistica">
+                    <div class="icone-cartao verde">
+                        <i class="fas fa-user-friends"></i>
+                    </div>
+                    <div class="conteudo-cartao">
+                        <h3>Grupo 1 (G1)</h3>
+                        <p class="valor-estatistica">16</p>
+                        <p class="mudanca-estatistica">Estudantes</p>
+                    </div>
+                </div>
+
+                <div class="cartao cartao-estatistica">
+                    <div class="icone-cartao laranja">
+                        <i class="fas fa-user-friends"></i>
+                    </div>
+                    <div class="conteudo-cartao">
+                        <h3>Grupo 2 (G2)</h3>
+                        <p class="valor-estatistica">16</p>
+                        <p class="mudanca-estatistica">Estudantes</p>
+                    </div>
+                </div>
+
+                <div class="cartao cartao-estatistica">
+                    <div class="icone-cartao roxo">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="conteudo-cartao">
+                        <h3>Média da Turma</h3>
+                        <p class="valor-estatistica">7.8</p>
+                        <p class="mudanca-estatistica">CR geral</p>
+                    </div>
+                </div>
+            </div>
+
+            <section class="secao-informacoes-turma">
+                <div class="cabecalho-secao">
+                    <h3><i class="fas fa-info-circle"></i> Informações Gerais da Turma</h3>
+                </div>
+                
+                <div class="cartao cartao-informacoes">
+                    <div class="informacoes-grid">
+                        <div class="info-item">
+                            <div class="icone-info">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="conteudo-info">
+                                <h4>Turma</h4>
+                                <p>INF31 - 3º Ano</p>
+                                <span class="detalhe-info">Técnico em Informática Integrado</span>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="icone-info">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                            <div class="conteudo-info">
+                                <h4>Coordenador</h4>
+                                <p>Prof. Dr. Carlos Mendes</p>
+                                <span class="detalhe-info">Coordenador do Curso</span>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="icone-info">
+                                <i class="fas fa-calendar-alt"></i>
+                            </div>
+                            <div class="conteudo-info">
+                                <h4>Período</h4>
+                                <p>Manhã</p>
+                                <span class="detalhe-info">7:30 às 12:00</span>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="icone-info">
+                                <i class="fas fa-door-open"></i>
+                            </div>
+                            <div class="conteudo-info">
+                                <h4>Sala</h4>
+                                <p>204 - Bloco B</p>
+                                <span class="detalhe-info">Capacidade: 35 alunos</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="secao-grupo-turma">
+                <div class="cabecalho-grupo">
+                    <h3><i class="fas fa-user-friends"></i> Grupo 1 - G1 (16 alunos)</h3>
+                    <span class="badge-grupo g1">Manhã - Segunda a Sexta</span>
+                </div>
+                
+                <div class="cartao cartao-lista-alunos">
+                    <div class="tabela-container">
+                        <table class="tabela-alunos" id="tabela-g1">
+                            <thead>
+                                <tr>
+                                    <th class="coluna-numero">#</th>
+                                    <th class="coluna-nome">Nome do Aluno</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <section class="secao-grupo-turma">
+                <div class="cabecalho-grupo">
+                    <h3><i class="fas fa-user-friends"></i> Grupo 2 - G2 (16 alunos)</h3>
+                    <span class="badge-grupo g2">Manhã - Segunda a Sexta</span>
+                </div>
+                
+                <div class="cartao cartao-lista-alunos">
+                    <div class="tabela-container">
+                        <table class="tabela-alunos" id="tabela-g2">
+                            <thead>
+                                <tr>
+                                    <th class="coluna-numero">#</th>
+                                    <th class="coluna-nome">Nome do Aluno</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="rodape">
+                <p>DesInstituto Inferior de Deseducação &copy; 2024</p>
+                <p>Sistema Educacional - Informações da Turma</p>
+            </footer>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="turma.js"></script>
+</body>
+</html>

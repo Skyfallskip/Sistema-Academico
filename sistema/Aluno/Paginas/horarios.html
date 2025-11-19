@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DesInstituto - Horários</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="conteiner">
+        
+        <aside class="menu-lateral">
+            <div class="logo">
+                <h1><i class="fas fa-graduation-cap"></i> DesInstituto</h1>
+                <p>Inferior de Deseducação</p>
+            </div>
+            
+            <nav class="navegacao">
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Painel</a></li>
+                    <li class="ativo"><a href="horarios.html"><i class="fas fa-clock"></i> Horários</a></li>
+                    <li><a href="notas.html"><i class="fas fa-star"></i> Notas</a></li>
+                    <li><a href="turma.html"><i class="fas fa-users"></i> Turma</a></li>
+                    <li><a href="avisos.html"><i class="fas fa-bullhorn"></i> Avisos</a></li>
+                </ul>
+            </nav>
+            <div class="info-usuario">
+                <div class="avatar">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+                <div class="detalhes-usuario">
+                    <h3>Odla Trealyum</h3>
+                    <p>Aluno - INF31</p>
+                </div>
+            </div>
+        </aside>
+
+        <main class="conteudo-principal">
+
+            <header class="cabecalho">
+                <div class="titulo-cabecalho">
+                    <h2>Horários da Turma</h2>
+                    <p>Grade Semanal - Turma INF31</p>
+                </div>
+                <div class="acoes-cabecalho">
+                    <div class="filtros-periodo">
+                        <button class="filtro-periodo ativo" data-periodo="manha">Manhã</button>
+                        <button class="filtro-periodo" data-periodo="tarde">Tarde</button>
+                        <button class="filtro-periodo" data-periodo="completo">Completo</button>
+                    </div>
+                    <div class="data-atual">
+                        <i class="far fa-calendar"></i>
+                        <span id="data-hoje"></span>
+                    </div>
+                </div>
+            </header>
+
+            <div class="cards-principais">
+                <div class="cartao cartao-informacao">
+                    <div class="cabecalho-informacao">
+                        <i class="fas fa-info-circle"></i>
+                        <h3>Informações da Grade</h3>
+                    </div>
+                    <div class="conteudo-informacao">
+                        <div class="item-informacao">
+                            <span class="rotulo-informacao">Período:</span>
+                            <span class="valor-informacao">Manhã (7:30 - 12:00)</span>
+                        </div>
+                        <div class="item-informacao">
+                            <span class="rotulo-informacao">Turma:</span>
+                            <span class="valor-informacao">INF31 - 3º Ano</span>
+                        </div>
+                        <div class="item-informacao">
+                            <span class="rotulo-informacao">Sala:</span>
+                            <span class="valor-informacao">204 (Bloco B)</span>
+                        </div>
+                        <div class="item-informacao">
+                            <span class="rotulo-informacao">Semana:</span>
+                            <span class="valor-informacao">15 a 19 de Março</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cartao cartao-informacao">
+                    <div class="cabecalho-informacao">
+                        <i class="fas fa-chart-pie"></i>
+                        <h3>Resumo Semanal</h3>
+                    </div>
+                    <div class="conteudo-informacao">
+                        <div class="item-informacao">
+                            <span class="rotulo-informacao">Total de Aulas:</span>
+                            <span class="valor-informacao">25 aulas</span>
+                        </div>
+                        <div class="item-informacao">
+                            <span class="rotulo-informacao">Horas Semanais:</span>
+                            <span class="valor-informacao">20 horas</span>
+                        </div>
+                        <div class="item-informacao">
+                            <span class="rotulo-informacao">Matérias Diferentes:</span>
+                            <span class="valor-informacao">8 matérias</span>
+                        </div>
+                        <div class="item-informacao">
+                            <span class="rotulo-informacao">Dia com Mais Aulas:</span>
+                            <span class="valor-informacao">Quarta-feira</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <section class="secao-horarios">
+                <div class="cabecalho-horarios">
+                    <h3><i class="fas fa-table"></i> Grade de Horários</h3>
+                    <div class="legenda-horarios">
+                        <div class="item-legenda">
+                            <span class="cor-legenda legenda-laboratorio"></span>
+                            <span>Laboratório</span>
+                        </div>
+                        <div class="item-legenda">
+                            <span class="cor-legenda legenda-sala"></span>
+                            <span>Sala de Aula</span>
+                        </div>
+                        <div class="item-legenda">
+                            <span class="cor-legenda legenda-atividade"></span>
+                            <span>Atividades</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tabela-container">
+                    <table class="tabela-horarios">
+                        <thead>
+                            <tr>
+                                <th class="coluna-horario">Horário</th>
+                                <th>Segunda</th>
+                                <th>Terça</th>
+                                <th>Quarta</th>
+                                <th>Quinta</th>
+                                <th>Sexta</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="celula-horario">
+                                    <span class="horario-texto">07:30</span>
+                                    <span class="horario-texto">- 09:10</span>
+                                </td>
+                                <td class="celula-aula tipo-laboratorio" data-materia="Programação Web" data-professor="Prof. Oliveira" data-sala="Lab. 3">
+                                    <div class="icone-aula">
+                                        <i class="fas fa-laptop-code"></i>
+                                    </div>
+                                    <div class="detalhes-aula">
+                                        <h4>Programação Web</h4>
+                                        <p>Prof. Oliveira</p>
+                                        <span class="local-aula">Lab. 3</span>
+                                    </div>
+                                </td>
+                                <td class="celula-aula tipo-sala" data-materia="Matemática" data-professor="Prof. Silva" data-sala="Sala 204">
+                                    <div class="icone-aula">
+                                        <i class="fas fa-calculator"></i>
+                                    </div>
+                                    <div class="detalhes-aula">
+                                        <h4>Matemática</h4>
+                                        <p>Prof. Silva</p>
+                                        <span class="local-aula">Sala 204</span>
+                                    </div>
+                                </td>
+                                <td class="celula-aula tipo-laboratorio" data-materia="Banco de Dados" data-professor="Prof. Costa" data-sala="Lab. 2">
+                                    <div class="icone-aula">
+                                        <i class="fas fa-database"></i>
+                                    </div>
+                                    <div class="detalhes-aula">
+                                        <h4>Banco de Dados</h4>
+                                        <p>Prof. Costa</p>
+                                        <span class="local-aula">Lab. 2</span>
+                                    </div>
+                                </td>
+                                <td class="celula-aula tipo-sala" data-materia="Inglês" data-professor="Prof. Santos" data-sala="Sala 105">
+                                    <div class="icone-aula">
+                                        <i class="fas fa-language"></i>
+                                    </div>
+                                    <div class="detalhes-aula">
+                                        <h4>Inglês</h4>
+                                        <p>Prof. Santos</p>
+                                        <span class="local-aula">Sala 105</span>
+                                    </div>
+                                </td>
+                                <td class="celula-aula tipo-sala" data-materia="História" data-professor="Prof. Lima" data-sala="Sala 108">
+                                    <div class="icone-aula">
+                                        <i class="fas fa-landmark"></i>
+                                    </div>
+                                    <div class="detalhes-aula">
+                                        <h4>História</h4>
+                                        <p>Prof. Lima</p>
+                                        <span class="local-aula">Sala 108</span>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="celula-horario">
+                                    <span class="horario-texto">09:20</span>
+                                    <span class="horario-texto">- 11:00</span>
+                                </td>
+                                <td class="celula-aula tipo-sala" data-materia="Português" data-professor="Prof. Almeida" data-sala="Sala 204">
+                                    <div class="icone-aula">
+                                        <i class="fas fa-book"></i>
+                                    </div>
+                                    <div class="detalhes-aula">
+                                        <h4>Português</h4>
+                                        <p>Prof. Almeida</p>
+                                        <span class="local-aula">Sala 204</span>
+                                    </div>
+                                </td>
+                                <td class="celula-aula tipo-laboratorio" data-materia="Algoritmos" data-professor="Prof. Oliveira" data-sala="Lab. 3">
+                                    <div class="icone-aula">
+                                        <i class="fas fa-code"></i>
+                                    </div>
+                                    <div class="detalhes-aula">
+                                        <h4>Algoritmos</h4>
+                                        <p>Prof. Oliveira</p>
+                                        <span class="local-aula">Lab. 3</span>
+                                    </div>
+                                </td>
+                                <td class="celula-aula tipo-sala" data-materia="Física" data-professor="Prof. Ribeiro" data-sala="Sala 202">
+                                    <div class="icone-aula">
+                                        <i class="fas fa-atom"></i>
+                                    </div>
+                                    <div class="detalhes-aula">
+                                        <h4>Física</h4>
+                                        <p>Prof. Ribeiro</p>
+                                        <span class="local-aula">Sala 202</span>
+                                    </div>
+                                </td>
+                                <td class="celula-aula tipo-laboratorio" data-materia="Redes" data-professor="Prof. Costa" data-sala="Lab. 1">
+                                    <div class="icone-aula">
+                                        <i class="fas fa-network-wired"></i>
+                                    </div>
+                                    <div class="detalhes-aula">
+                                        <h4>Redes</h4>
+                                        <p>Prof. Costa</p>
+                                        <span class="local-aula">Lab. 1</span>
+                                    </div>
+                                </td>
+                                <td class="celula-aula tipo-atividade" data-materia="Educação Física" data-professor="Prof. Souza" data-sala="Quadra">
+                                    <div class="icone-aula">
+                                        <i class="fas fa-running"></i>
+                                    </div>
+                                    <div class="detalhes-aula">
+                                        <h4>Educação Física</h4>
+                                        <p>Prof. Souza</p>
+                                        <span class="local-aula">Quadra</span>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="celula-horario">
+                                    <span class="horario-texto">11:10</span>
+                                    <span class="horario-texto">- 12:00</span>
+                                </td>
+                                <td class="celula-aula tipo-sala" data-materia="Geografia" data-professor="Prof. Fernandes" data-sala="Sala 108">
+                                    <div class="icone-aula">
+                                        <i class="fas fa-globe-americas"></i>
+                                    </div>
+                                    <div class="detalhes-aula">
+                                        <h4>Geografia</h4>
+                                        <p>Prof. Fernandes</p>
+                                        <span class="local-aula">Sala 108</span>
+                                    </div>
+                                </td>
+                                <td class="celula-aula tipo-sala" data-materia="Química" data-professor="Prof. Martins" data-sala="Sala 105">
+                                    <div class="icone-aula">
+                                        <i class="fas fa-flask"></i>
+                                    </div>
+                                    <div class="detalhes-aula">
+                                        <h4>Química</h4>
+                                        <p>Prof. Martins</p>
+                                        <span class="local-aula">Sala 105</span>
+                                    </div>
+                                </td>
+                                <td class="celula-aula tipo-sala" data-materia="Matemática" data-professor="Prof. Silva" data-sala="Sala 204">
+                                    <div class="icone-aula">
+                                        <i class="fas fa-calculator"></i>
+                                    </div>
+                                    <div class="detalhes-aula">
+                                        <h4>Matemática</h4>
+                                        <p>Prof. Silva</p>
+                                        <span class="local-aula">Sala 204</span>
+                                    </div>
+                                </td>
+                                <td class="celula-aula tipo-sala" data-materia="Português" data-professor="Prof. Almeida" data-sala="Sala 204">
+                                    <div class="icone-aula">
+                                        <i class="fas fa-book"></i>
+                                    </div>
+                                    <div class="detalhes-aula">
+                                        <h4>Português</h4>
+                                        <p>Prof. Almeida</p>
+                                        <span class="local-aula">Sala 204</span>
+                                    </div>
+                                </td>
+                                <td class="celula-aula tipo-vazio">
+                                    <div class="conteudo-vazio">
+                                        <i class="far fa-smile"></i>
+                                        <span>Sem Aula</span>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="secao-aulas-hoje">
+                <div class="cabecalho-secao">
+                    <h3><i class="fas fa-calendar-day"></i> Aulas de Hoje</h3>
+                    <span class="data-hoje-texto">Segunda-feira, 15 de Março</span>
+                </div>
+                
+                <div class="cards-aulas-hoje">
+                    <div class="cartao aula-hoje">
+                        <div class="cabecalho-aula-hoje">
+                            <div class="horario-aula-hoje">
+                                <span class="hora-aula">07:30</span>
+                                <span class="hora-aula">09:10</span>
+                            </div>
+                            <div class="status-aula-hoje status-atual">
+                                <i class="fas fa-play-circle"></i>
+                                <span>Em andamento</span>
+                            </div>
+                        </div>
+                        <div class="conteudo-aula-hoje">
+                            <div class="icone-aula-hoje">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <div class="detalhes-aula-hoje">
+                                <h4>Programação Web</h4>
+                                <p>Prof. Oliveira - Lab. 3</p>
+                                <span class="tipo-aula-hoje">Laboratório</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cartao aula-hoje">
+                        <div class="cabecalho-aula-hoje">
+                            <div class="horario-aula-hoje">
+                                <span class="hora-aula">09:20</span>
+                                <span class="hora-aula">11:00</span>
+                            </div>
+                            <div class="status-aula-hoje status-proxima">
+                                <i class="fas fa-clock"></i>
+                                <span>Próxima</span>
+                            </div>
+                        </div>
+                        <div class="conteudo-aula-hoje">
+                            <div class="icone-aula-hoje">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <div class="detalhes-aula-hoje">
+                                <h4>Português</h4>
+                                <p>Prof. Almeida - Sala 204</p>
+                                <span class="tipo-aula-hoje">Sala de Aula</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cartao aula-hoje">
+                        <div class="cabecalho-aula-hoje">
+                            <div class="horario-aula-hoje">
+                                <span class="hora-aula">11:10</span>
+                                <span class="hora-aula">12:00</span>
+                            </div>
+                            <div class="status-aula-hoje status-futura">
+                                <i class="far fa-calendar"></i>
+                                <span>Mais tarde</span>
+                            </div>
+                        </div>
+                        <div class="conteudo-aula-hoje">
+                            <div class="icone-aula-hoje">
+                                <i class="fas fa-globe-americas"></i>
+                            </div>
+                            <div class="detalhes-aula-hoje">
+                                <h4>Geografia</h4>
+                                <p>Prof. Fernandes - Sala 108</p>
+                                <span class="tipo-aula-hoje">Sala de Aula</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <div class="modal-overlay" id="modalDetalhes">
+                <div class="modal-detalhes">
+                    <div class="cabecalho-modal">
+                        <h3 class="titulo-modal">Detalhes da Aula</h3>
+                        <button class="botao-fechar-modal" id="fecharModal">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div class="conteudo-modal">
+                        <div class="info-aula-modal" id="conteudoModal">
+
+                        </div>
+                        
+                        <div class="horarios-modal">
+                            <div class="item-horario">
+                                <span class="rotulo-horario">Início</span>
+                                <span class="valor-horario" id="horaInicioModal">07:30</span>
+                            </div>
+                            <div class="item-horario">
+                                <span class="rotulo-horario">Término</span>
+                                <span class="valor-horario" id="horaTerminoModal">09:10</span>
+                            </div>
+                        </div>
+
+                        <div class="acoes-modal">
+                            <button class="botao-modal primario" id="botaoLembreteModal">
+                                <i class="fas fa-bell"></i>
+                                Definir Lembrete
+                            </button>
+                            <button class="botao-modal secundario" id="botaoCompartilharModal">
+                                <i class="fas fa-share-alt"></i>
+                                Compartilhar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="rodape">
+                <p>DesInstituto Inferior de Deseducação &copy; 2024</p>
+                <p>Sistema Educacional - Horários</p>
+            </footer>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
